@@ -1,0 +1,86 @@
+// BASE COLOR
+.color-base(light) {
+  @h: 10;
+  @s: 3%;
+  --color-base-0: hsl(@h, @s, 98%);
+  --color-base-1: hsl(@h, @s, 95%);
+  --color-base-2: hsl(@h, @s, 91%);
+  --color-base-3: hsl(@h, @s, 87%);
+  --color-base-4: hsl(@h, @s, 82%);
+  --color-base-5: hsl(@h, @s, 77%);
+  --color-base-6: hsl(@h, @s, 71%);
+  @contrast: black;
+  --color-base-contrast: @contrast;
+  --color-base-contrast-transparent: fade(@contrast, 10%);
+  --color-base-contrast-subtle: hsl(@h, @s, 35%);
+  --color-base-contrast-subtler: hsl(@h, @s, 50%);
+}
+.color-base(dark) {
+  @h: 10;
+  @s: 1%;
+  --color-base-0: hsl(@h, @s, 9%);
+  --color-base-1: hsl(@h, @s, 12%);
+  --color-base-2: hsl(@h, @s, 15%);
+  --color-base-3: hsl(@h, @s, 19%);
+  --color-base-4: hsl(@h, @s, 22%);
+  --color-base-5: hsl(@h, @s, 30%);
+  --color-base-6: hsl(@h, @s, 35%);
+  @contrast: white;
+  --color-base-contrast: @contrast;
+  --color-base-contrast-transparent: fade(@contrast, 10%);
+  --color-base-contrast-subtle: hsl(@h, @s, 75%);
+  --color-base-contrast-subtler: hsl(@h, @s, 50%);
+}
+
+// ACCENT COLOR
+@color-accent: hsl(176, 100%, 47%);
+@color-accent-blend: hsl(245, 100%, 57%);
+.color-accent(light) {
+  --color-accent: @color-accent;
+  --color-accent-subtle: tint(@color-accent, 40%);
+  --color-accent-strong: shade(@color-accent, 28%);
+  --color-accent-blend: @color-accent-blend;
+  --color-accent-contrast: black;
+}
+.color-accent(dark) {
+  --color-accent: @color-accent;
+  --color-accent-subtle: shade(@color-accent, 28%);
+  --color-accent-strong: tint(@color-accent, 40%);
+  --color-accent-blend: @color-accent-blend;
+  --color-accent-contrast: black;
+}
+
+// COMPLEMENT COLOR
+@color-complement: hsl(327, 95%, 65%);
+.color-complement(light) {
+  --color-complement: @color-complement;
+  --color-complement-subtle: tint(@color-complement, 30%);
+  --color-complement-strong: shade(@color-complement, 10%);
+  --color-complement-contrast: white;
+}
+.color-complement(dark) {
+  --color-complement: @color-complement;
+  --color-complement-subtle: tint(@color-complement, 30%);
+  --color-complement-strong: shade(@color-complement, 10%);
+  --color-complement-contrast: white;
+}
+
+// STATUS COLORS
+.color-status() {
+  --color-success: hsl(169, 82%, 40%);
+  --color-error: hsl(349, 85%, 63%);
+  --color-error-contrast: white;
+}
+
+// SET THEMES
+@themes: light, dark;
+each(@themes, {
+  .theme-@{value} {
+    .color-base(@value);
+    .color-accent(@value);
+    .color-complement(@value);
+    .color-status();
+    background-color: var(--color-base-1);
+    color: var(--color-base-contrast);
+  }
+});

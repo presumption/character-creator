@@ -1,0 +1,35 @@
+# Build/temporary
+target
+classes
+.cache
+_build
+build
+*~
+dist
+dist-ssr
+
+# Editor directories and files
+.vscode
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.iml
+*.ipr
+*.iws
+.idea
+
+# OSX
+.DS_Store
+
+# Web
+node_modules
+elm-stuff
+.parcel-cache
+
+# Logs
+*.log
+log
+logs
