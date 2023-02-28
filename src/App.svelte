@@ -17,12 +17,12 @@
 
   .vault {
     width: 50rem;
-    border-right: @space1 solid var(--color-base-3);
+    border-right: 4px solid var(--color-base-3);
   }
 
   .character {
     flex-grow: 1;
-    padding: @space5 @space10;
+    padding: 10px 30px;
   }
 </style>
 

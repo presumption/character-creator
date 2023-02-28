@@ -31,7 +31,7 @@
   label {
     padding-right: 2px;
     font-variant: petite-caps;
-    color: hsl(0, 0%, 45%);
+    color: var(--color-base-contrast-subtle);
     line-height: 1.7em;
   }
 </style>

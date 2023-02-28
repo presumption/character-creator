@@ -13,7 +13,7 @@
 
     str: number;
     con: number;
-    siz: number;
+    size: number;
     dex: number;
     app: number;
     int: number;
@@ -33,7 +33,7 @@
 
     str: 50,
     con: 50,
-    siz: 50,
+    size: 50,
     dex: 50,
     app: 50,
     int: 50,
@@ -73,9 +73,19 @@
       <div class="character-stats">
         <h1>Stats</h1>
         <div class="character-stats-row">
-          <Stat label="STR" value="{character.str}"/>
-          <Stat label="DEX" value="{character.dex}"/>
-          <Stat label="POW" value="{character.pow}"/>
+          <Stat label="str" value="{character.str}"/>
+          <Stat label="dex" value="{character.dex}"/>
+          <Stat label="pow" value="{character.pow}"/>
+        </div>
+        <div class="character-stats-row">
+          <Stat label="con" value="{character.con}"/>
+          <Stat label="app" value="{character.app}"/>
+          <Stat label="edu" value="{character.edu}"/>
+        </div>
+        <div class="character-stats-row">
+          <Stat label="size" value="{character.size}"/>
+          <Stat label="int" value="{character.int}"/>
+          <Stat label="move" value="{character.move}"/>
         </div>
       </div>
       <div class="character-portrait">Portrait</div>
@@ -85,27 +95,27 @@
 
 
 <style lang="less">
-  @import "../lib/vars";
+  @import "vars";
   @import "../lib/text-input";
 
   .character-border {
-    border: @space3 solid var(--color-base-5);
+    border: 12px solid var(--color-base-5);
     width: 100%;
     height: 100%;
-    padding: @space0;
+    padding: 2px;
   }
 
   .character-sheet {
-    border: @space0 solid var(--color-base-5);
+    border: 2px solid var(--color-base-5);
     width: 100%;
     height: 100%;
-    padding: @space2;
+    padding: @spacer;
 
     .character-top-row {
       width: 100%;
       display: flex;
       flex-flow: row nowrap;
-      column-gap: @space3;
+      column-gap: @spacer
     }
   }
 
@@ -129,8 +139,9 @@
   }
 
   .character-section() {
-    border: @space0 solid var(--color-base-3);
-    row-gap: @space2;
+    border: 2px solid var(--color-base-3);
+    row-gap: @spacer;
+    padding-bottom: @spacer;
 
     h1 {
       text-align: center;
@@ -143,17 +154,19 @@
   }
 
   .character-section-row {
-    padding: 0 @space2;
+    padding: 0 @spacer;
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-end;
   }
 
   .character-stats-row {
-    margin: @space2 0;
-    padding: 0 @space2;
+    margin: @spacer 0;
+    padding: 0 @spacer;
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-end;
+    justify-content: center;
+    column-gap: @spacer;
   }
 </style>
